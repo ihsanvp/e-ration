@@ -34,6 +34,37 @@ importers:
         version: 12.0.0
       fireorm:
         specifier: ^0.23.3
+        version: 0.23.3(reflect-metadata@0.1.14)
+      hono:
+        specifier: ^4.2.1
+        version: 4.2.1
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.20240208.0
+        version: 4.20240402.0
+      '@hono/vite-cloudflare-pages':
+        specifier: ^0.2.4
+        version: 0.2.5(hono@4.2.1)
+      '@hono/vite-dev-server':
+        specifier: ^0.10.0
+        version: 0.10.0(hono@4.2.1)
+      vite:
+        specifier: ^5.0.12
+        version: 5.1.4
+      wrangler:
+        specifier: ^3.32.0
+        version: 3.44.0(@cloudflare/workers-types@4.20240402.0)
+
+  apps/api-worker:
+    dependencies:
+      firebase:
+        specifier: ^10.10.0
+        version: 10.10.0
+      firebase-admin:
+        specifier: ^12.0.0
+        version: 12.0.0
+      fireorm:
+        specifier: ^0.23.3
         version: 0.23.3(reflect-metadata@0.2.2)
       hono:
         specifier: ^4.2.1
@@ -1271,6 +1302,36 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       is-negated-glob: 1.0.0
+    dev: true
+
+  /@hono/node-server@1.9.1:
+    resolution: {integrity: sha512-XBru0xbtRlTZJyAiFJLn7XDKbCVXBaRhVQAQhB9TwND2gwj8jf9SDWIj/7VxVtNAjURJf7Ofcz58DRA6DPYiWA==}
+    engines: {node: '>=18.14.1'}
+    dev: true
+
+  /@hono/vite-cloudflare-pages@0.2.5(hono@4.2.1):
+    resolution: {integrity: sha512-/Cw4bREPf2OelHDc/2oVXYXemyKz+wXkC+5uK8ZLo8c2JV7vthSchQPWK7O6BGe7al0z5qKVqhTYkfZvuW0T5w==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: '*'
+    dependencies:
+      hono: 4.2.1
+    dev: true
+
+  /@hono/vite-dev-server@0.10.0(hono@4.2.1):
+    resolution: {integrity: sha512-JWqdgH59x/PKDrwVCS5EW4eOL4fV+JOuzlKgaHk5eQUgE9vkPwyWwmf8f8rXjsXt5zxOKS3XMlf8sZeglFg3hw==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: '*'
+    dependencies:
+      '@hono/node-server': 1.9.1
+      hono: 4.2.1
+      miniflare: 3.20240329.0
+      minimatch: 9.0.3
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@humanwhocodes/config-array@0.11.14:
@@ -2824,6 +2885,17 @@ packages:
       - '@react-native-async-storage/async-storage'
     dev: false
 
+  /fireorm@0.23.3(reflect-metadata@0.1.14):
+    resolution: {integrity: sha512-HQB/WyHZp0Khoxp7AZFpwwbGznVMesuVuRl4QR74UEIN6UZkKUASOFdT+d0Pkif5W2oKQmVdd0mFsJiLxEuCJg==}
+    peerDependencies:
+      reflect-metadata: ^0.1.13
+    dependencies:
+      class-transformer: 0.4.0
+      pluralize: 8.0.0
+      reflect-metadata: 0.1.14
+      ts-object-path: 0.1.2
+    dev: false
+
   /fireorm@0.23.3(reflect-metadata@0.2.2):
     resolution: {integrity: sha512-HQB/WyHZp0Khoxp7AZFpwwbGznVMesuVuRl4QR74UEIN6UZkKUASOFdT+d0Pkif5W2oKQmVdd0mFsJiLxEuCJg==}
     peerDependencies:
@@ -3178,7 +3250,6 @@ packages:
   /hono@4.2.1:
     resolution: {integrity: sha512-yDv/6esHiDgq5fvsALTNyNiRxktOplO6LfSMgIkGE+E5vF8axsUfcyfzzlbLYM9ZQDMuws/ZLGUGWwYnAwCcNw==}
     engines: {node: '>=16.0.0'}
-    dev: false
 
   /http-parser-js@0.5.8:
     resolution: {integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==}
@@ -4143,6 +4214,10 @@ packages:
     dependencies:
       resolve: 1.22.8
     dev: true
+
+  /reflect-metadata@0.1.14:
+    resolution: {integrity: sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==}
+    dev: false
 
   /reflect-metadata@0.2.2:
     resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
