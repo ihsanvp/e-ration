@@ -39,3 +39,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: 'apps/api'
           packageManager: 'pnpm'
+          command: deploy --minify src/index.ts
