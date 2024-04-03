@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",
+    "gulp": "^5.0.0",
     "wrangler": "^3.32.0"
   }
 }
